@@ -1,0 +1,181 @@
+I have not had any gripes with any of my Comp E professors besides Dr Daniels, and even then it’s more of just a preference that I don’t like his lectures. It’s computer science professors that you have to watch out for lol
+
+18
+HomeworkPuzzleheaded
+OP
+•
+1y ago
+dr. daniels is a no go, got it. trying to root out some of these pesky cs professors that i’ve been hearing about so much lol
+
+1
+felineh8r
+•
+1y ago
+If you're planning on CPRE, you will probably have Daniels at 8am for intro to cpre on Tuesday and Thursday. That's just when the classes are, and I wouldn't recommend taking it 2nd semester just to avoid the time slot. And overall he isn't a bad professor imo.
+
+11
+
+6 more replies
+GarrettTheElf
+•
+1y ago
+Honestly I loved Daniel's, some people just don't take lightly to having to be an adult in college. Also if you're coming in the fall semester for computer engineering or cyber security engineering you WILL have daniels 8 am Tuesday Thursday, like it or not
+
+5
+
+4 more replies
+u/butterontoazt avatar
+butterontoazt
+•
+1y ago
+He’s in the CS department, but stay away from Jim (James) Lathrop. He’s condescending and incredibly unorganized. Check out his RMP for more info
+
+Here’s how the class blocks work for Monday Wednesday Fri: 7:45-8:35, 8:50-9:40, 9:55-10:45, 11:00-11:50, 12:05-12:55, 1:10-2:00, 2:15-3:05, 3:20-4:10, 4:15-5:05
+
+Tuesday and Thursday classes are longer and go: 9:30-11:45, 11:00-12:15, 12:30-1:45, 2:00-3:15, 3:30-4:15
+
+Assuming you’re a full time student (12 credits+), having only 10AMs won’t be possible. But it’s certainly possible to not schedule any 8AMs, which I recommend not doing anyway.
+
+The room selection process doesn’t open up for prospective freshmen for a few months, and you’ll schedule your classes during orientation.
+
+I also recommend living on west campus, specifically Friley or Helser. It’s gonna be a lot more convenient because you’re way closer to the engineering buildings. And you’re gonna want that if it’s as cold next year as it is right now.
+
+13
+HomeworkPuzzleheaded
+OP
+•
+1y ago
+really well structured reply man. yeah, i really just meant no 8ams especially with my messed up sleep schedule that i’ve never been able to fix. nice to see that even if i do get scheduled early the earliest is 8:50. for the tuesday/thursday blocks, did you mean 9:30-10:45 and 11-12:15? just wondering because the 12-12:15 block wouldn’t really make sense lol. also hearing a lot to research my cs professors, as there a couple bad eggs in the mix. thanks for the advice, but also, would being put in Geoffrey or Buch be a terrible idea? its kinda in the middle of everything and i heard they’re nicer dorms for the most part, as well as very social. im a social kinda guy, is it worth trying to coordinate with the bus in order to be closer to the stadium and other people i’d fit in with better? or would it really suck that bad? thanks again man
+
+3
+u/butterontoazt avatar
+butterontoazt
+•
+1y ago
+Good catch, it is 11-1215
+
+Personally I wouldn’t live in Geoff. There isn’t a dining hall super close by (you would have to walk to MWL or UDCC). But they are very nice and new (2014 I think). They are pretty social but it’s a lot of people in Greek life and tend to be pretty rowdy.
+
+I am gonna do my thing and push you to Helser again as it has a great community as well. It doesn’t have AC which does suck for the first couple weeks but that also means lots of people have their doors open so there are plenty of opportunities to meet people. There are also two dining halls right there and State Gym is a 1 minute walk.
+
+But definitely do your research and schedule a visit to see the dorms if you can. Lmk if you have any other questions
+
+2
+
+1 more reply
+u/Ok_Locksmith9741 avatar
+Ok_Locksmith9741
+•
+1y ago
+Avoid Gaffar. He's funny but you won't learn anything
+
+11
+u/Mr_Spytato avatar
+Mr_Spytato
+•
+1y ago
+I second this. The two classes I took with Gaffar were some of the worst classes I've ever taken, all because of the professor.
+
+Unfortunately, he seemed to be the only professor teaching those two classes (SE317 and the cloud computing one, I don't remember the course number).
+
+5
+HomeworkPuzzleheaded
+OP
+•
+1y ago
+does anyone know if he’s still the only option for some classes? have some teachers at high school that do some fuckery like this and know how it is. i have mild ADD and im not medicated so if i have a class like this i likely wont be able to take initiative to try and learn it on my own and ill just accept the fact that im not learning anything. i know this doesnt sound like a good precedent for majoring in CompE, and I hope to work out my self-discipline before i go off to ISU, but would prefer if i didnt have to deal with this
+
+1
+
+2 more replies
+u/ZHunter4750 avatar
+ZHunter4750
+•
+1y ago
+I took CprE 326 (software project management) with him the semester he got arrested. That was the only highlight of the semester, and the entire class was a waste of time. He mainly just talks about his time at Palo Alto for some reason and barely even teaches his classes (my brother took SE317 with him and it was pretty much the same story)
+
+6
+u/fancyfingertips avatar
+fancyfingertips
+•
+1y ago
+This is absolutely hilarious to me. I still to this day (i'm long graduated) make jokes about how he brung up Palo Alto in every lecture. That man's entire self worth is rooted in working in Silicon Valley
+
+1
+u/Basement_Leopard avatar
+Basement_Leopard
+•
+1y ago
+It is possible for all 10 am classes. My freshman first semester, my academic advisor asked me straight up if I like morning, afternoon, or evening classes. At least for aerospace I had all classes start at 11 and go until 4:20ish.
+
+2
+HomeworkPuzzleheaded
+OP
+•
+1y ago
+okay awesome thats nice to hear. would you have any advice on the front of AP credits? ill have between 27 & 44 credit hours based on how i do this fall on my exams. should i try to take it easy freshman year and make my 4 years just a bit easier? or should i try to graduate in 3 years for my bachelors in CompE? just wondering since you’re aerospace you might have a clue as to the workload and what i might want to do with my time there.
+
+2
+u/Basement_Leopard avatar
+Basement_Leopard
+•
+1y ago
+graduating in 3 years will kill you. Also why, enjoy life and make friends. I came in with a 1400 sat and ap credit for calc 1 and stats/csa. Honestly take what you think is right, this summer I’m taking diff eq to let myself have an easier first semester in the fall with statics and physics 2
+
+4
+GarrettTheElf
+•
+1y ago
+Been in your position, I am graduating in three years in Cyber Security Engineering which is basically a sibling of CprE, just less electrical engineering classes. I came in with over 70 credits and an associates degree and I am barely graduating in 3 years. I think you could possibly do 3.5 years (7 semesters, so less than 3.5 years if you want to do summer classes), but 3 would be rough. It all comes down to which credits you are transferring in, but since ISU doesn't take any PLTW engineering classes or such due to our program accreditations, probably won't be able to speed up your track too much. \
+
+TLDR: you can do it in 3, but you're going to have to do some summer classes because of pre-reqs and lack of credits transferring in.
+
+2
+u/ZHunter4750 avatar
+ZHunter4750
+•
+1y ago
+I came in with 25 credits because of college classes I took as a high schooler. Anything less than MAYBE 3.5 years is a massive struggle, and you most likely won’t be able to do it. I have seen people graduate a semester early, but they came in with a lot of community college credits and did summer/winter courses. There are a lot of pre reqs for higher classes and you have to do 2 semesters of senior design, which have their own pre reqs.
+
+1
+[deleted]
+•
+1y ago
+u/BurningVShadow avatar
+BurningVShadow
+•
+1y ago
+I did my job at making sure my more favorable/memorable professors weren’t being talked about.
+
+1
+u/BardDiff avatar
+BardDiff
+•
+1y ago
+Are you saying you made sure the good ones weren’t being discussed in this thread? And if they were you’d defend them? Who are some of your favorites off the top of your head
+
+1
+u/BurningVShadow avatar
+BurningVShadow
+•
+1y ago
+Pretty much lol. I would defend a fair amount of them, but others I could kinda care less for. Some of my favorites are Julie Rursch, Diane Rover, Phillip Jones, Henry Duwe, and those are the ones that rolled off my head. They all care about their students and manage to make their classes interesting and informative.
+
+2
+redditusersshoulddie
+•
+1y ago
+If you’re going to be a freshman this fall, you’re already miles behind the housing race. Either way, you need to live in the union drive area as a comp e freshman. I wouldn’t consider any other dorms considering it gets so s so cold during the winter and you’ll want the closeness to the gym, dining halls, and a lot of your classes should be by here also
+
+-2
+HomeworkPuzzleheaded
+OP
+•
+1y ago
+you really think so? even though some of my classes will be gen eds on the other side of campus? i heard cyride is really efficient for getting around campus in general, but maybe i overestimated it lol. also wdym im miles behind the housing race? theres no way that many people have already registered for housing this early in the year. will i have much of a choice if im miles behind?
+
+5
+redditusersshoulddie
+•
+1y ago
+Housing opens in the summer before. So a ton of people have already applied and dorms like Martin/eaton are probably off the table unless you go in with a partner. I also don’t know anyone that has gen Ed’s that were closer to MLW or GB than Union drive. Cyride is very nice but there aren’t stops close to a lot of lecture halls so you’ll just end up walking

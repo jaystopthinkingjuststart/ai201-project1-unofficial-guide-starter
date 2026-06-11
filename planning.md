@@ -11,6 +11,10 @@
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
 
+I chose professor and class reviews at my university. Iowa State University.
+
+Officially no college would tell you students like X or dislike Y about professors or classes. So I took a wide variety of sources so when a student or incoming student asks questions they can get real answers grounded in truth!
+
 ---
 
 ## Documents
@@ -20,16 +24,18 @@
 
 | # | Source | Description | URL or location |
 |---|--------|-------------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| 1 | ISU Rate my professors | overall school-wide ratings | https://www.ratemyprofessors.com/school/452 |
+| 2 | Rate My Professors, all ISU professors | Searchable list of every rated prof | https://www.ratemyprofessors.com/search/professors/452?q=* |
+| 3 | Coursicle for isu | Reviews tied to the exact courses each professor teaches | https://www.coursicle.com/iastate/professors/ |
+| 4 | Uloop for isu | Second review aggregator for cross-coverage of the same profs | https://iastate.uloop.com/professors |
+| 5 | ISU CS Department faculty | Official names→courses map, so i can look up the right professors | https://www.cs.iastate.edu/people/faculty |
+| 6 | reddit recommended classes | Threads debating best classes regardless of major | https://www.reddit.com/r/iastate/comments/1spwunn/whats_a_class_at_iowa_state_that_youd_recommend/ |
+| 7 | reddit best professors | favorite professors across departments | https://www.reddit.com/r/iastate/comments/1al3k6c/best_professors_at_isu/ |
+| 8 | reddit worst professors  | professors to watch out for | https://www.reddit.com/r/iastate/comments/1akvev2/worst_professors_at_isu/ |
+| 9 | reddit cpre professors to avoid | Which cpre professors to take/avoid | https://www.reddit.com/r/iastate/comments/1isfle3/professors_to_stay_away_from_compe/ |
+| 10 | reddit category classes recommended | top category classes recommended | https://www.reddit.com/r/iastate/comments/1gadbt6/any_fun_category_classes/ |
+| 11 | reddit simple classes recommended | simple classes recommended by other students | https://www.reddit.com/r/iastate/comments/k8kqz0/what_are_some_fun_simple_classes_youve_taken/ |
+
 
 ---
 
@@ -40,11 +46,11 @@
      numbers fit the structure of your documents.
      A review-heavy corpus warrants different chunking than a long FAQ. -->
 
-**Chunk size:**
+**Chunk size:** 400 chars
 
-**Overlap:**
+**Overlap:** 50 chars
 
-**Reasoning:**
+**Reasoning:** Definitely review heavy, mostly short and consistent self contained opinions and messages. I want each chunk to be about one opinion roughly. Longer chunks may accidentally merge multiple professors or classes.
 
 ---
 
@@ -56,11 +62,11 @@
      would you weigh in choosing a different embedding model — context length, multilingual
      support, accuracy on domain-specific text, latency? -->
 
-**Embedding model:**
+**Embedding model:** all-minilm-l6-v2 
 
-**Top-k:**
+**Top-k:** 5
 
-**Production tradeoff reflection:**
+**Production tradeoff reflection:** this is the free one i have access to right now, but if cost wasn't an issue I may consider a more expensive model that is trained on a bigger set of data that could handle student language and sarcasm/insults better and subtle meaning that may not always be proper grammar. top 5 allows for sentiment aggregation and trust rather than "1 person said xyz"
 
 ---
 
@@ -73,11 +79,11 @@
 
 | # | Question | Expected answer |
 |---|----------|-----------------|
-| 1 | | |
-| 2 | | |
-| 3 | | |
-| 4 | | |
-| 5 | | |
+| 1 | Which professors do ISU students name as the best, and in what subjects? | (from row 7 thread — list the professors actually named) |
+| 2 | Which Computer Engineering (CPR E) professors do students say to avoid, and why? | (from row 9 thread — the prof names + reasons given) |
+| 3 | What are some fun, easy "category"/gen-ed classes students recommend? | (from rows 10 & 11 — the specific classes mentioned) |
+| 4 | What class do students recommend taking regardless of major, and why? | (from row 6 — the class + the reason students give) |
+| 5 | What do students say about [a specific professor with several RMP reviews]'s grading? | (from rows 1–4 — summarize that prof's reviews) |
 
 ---
 
@@ -87,9 +93,9 @@
      Consider: noisy or inconsistent documents, missing source attribution, off-topic
      retrieval, chunks that split key information across boundaries. -->
 
-1.
+1. I'm worried about contradictory reviews confusing the model as opposed to being seen as subjective inputs. Or old reviews or professors that have changed courses and may have been good at one course but data hasn't been updated for a new course they're bad at
 
-2.
+2. Chunking boundaries could cause an issue with attribution and association (He is very good... bleeding into another that says she is very bad)
 
 ---
 
@@ -101,6 +107,18 @@
      You can use ASCII art, a Mermaid diagram, or embed a sketch as an image.
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
 
+
+┌─────────────────────┐   ┌──────────────┐   ┌────────────────────────┐   ┌──────────────┐   ┌──────────────────┐
+│ 1. Doc Ingestion    │   │ 2. Chunking  │   │ 3. Embedding + Vector  │   │ 4. Retrieval │   │ 5. Generation    │
+│                     │──▶│              │──▶│    Store               │──▶│              │──▶│                  │
+│ .txt files in       │   │ char window  │   │ all-MiniLM-L6-v2       │   │ ChromaDB     │   │ Groq LLM         │
+│ documents/ (RMP,    │   │ 400 chars,   │   │ (sentence-transformers)│   │ query,       │   │ (llama-3.x),     │
+│ Reddit, Coursicle), │   │ 50 overlap;  │   │ → ChromaDB persistent  │   │ cosine,      │   │ grounded prompt  │
+│ Python file reader  │   │ +prof/course │   │ collection (cosine)    │   │ top-k = 5    │   │ → Gradio UI      │
+│                     │   │ name prefix  │   │                        │   │              │   │                  │
+└─────────────────────┘   └──────────────┘   └────────────────────────┘   └──────────────┘   └──────────────────┘
+
+Thank you genai for the beautiful ascii that would've taken me 500000 years
 ---
 
 ## AI Tool Plan
@@ -116,7 +134,23 @@
      with my specified chunk size and overlap" is a plan. -->
 
 **Milestone 3 — Ingestion and chunking:**
+Tool: Claude Code. Input: my Chunking Strategy section + a sample of 2–3 collected documents so
+it sees the real review format. Ask it to implement the document loader (read every file in
+documents/) and a chunk function using my 400-char size / 50-char overlap, prepending the
+professor/course name to each chunk. Verify: run it on one RMP file and one Reddit file, print
+the resulting chunks, and confirm individual reviews stay intact and each chunk carries its
+professor/course label.
 
 **Milestone 4 — Embedding and retrieval:**
+Tool: Claude Code. Input: my Retrieval Approach section. Ask it to embed chunks with
+all-MiniLM-L6-v2, store them in a persistent ChromaDB collection (cosine), and implement a
+retrieve() that returns top-5 chunks with text, source, and distance. Verify: run eval question
+#1, print the 5 results with distances, and confirm the closest chunks are actually about the
+professors named in that thread (the same sanity check I used in the RulesBot lab).
 
 **Milestone 5 — Generation and interface:**
+Tool: Claude Code. Input: my Evaluation Plan + a grounding requirement (answer only from
+retrieved reviews; report consensus; say so when reviews don't cover it). Ask it to implement a
+grounded generate_response() and a Gradio chat UI. Verify: run all 5 eval questions and check
+each answer matches my expected answers, plus ask an off-corpus question (e.g. a professor not
+in my docs) and confirm it says it has no reviews rather than inventing one.
