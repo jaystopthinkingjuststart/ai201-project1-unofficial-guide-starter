@@ -14,6 +14,10 @@
      Example: "Student reviews of CS professors at [university] — useful because official
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
 
+     I chose professor and class reviews at my university. Iowa State University.
+
+Officially no college would tell you students like X or dislike Y about professors or classes. So I took a wide variety of sources so when a student or incoming student asks questions they can get real answers grounded in truth!
+
 ---
 
 ## Document Sources
@@ -67,6 +71,8 @@
 **Model used:**
 
 **Production tradeoff reflection:**
+
+Model used: all-MiniLM-L6-v2 (sentence-transformers) — local, no API key, strong on short informal text. Production tradeoff: Good for being free, but missing sentiment and nuance of more expensive models
 
 ---
 
@@ -124,6 +130,8 @@
 **Root cause (tied to a specific pipeline stage):**
 
 **What you would change to fix it:**
+
+ook at query 2 ("which CPR E professors to avoid"): the top results are people students defend/recommend ("Some of my favorites are Julie Rursch, Diane Rover…"), not avoid. The embeddings matched the topic (CprE professors) strongly but couldn't distinguish the sentiment (avoid vs. recommend). In this case sentiment is slipping through the cracks!
 
 ---
 
