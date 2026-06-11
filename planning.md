@@ -28,7 +28,7 @@ Officially no college would tell you students like X or dislike Y about professo
 | 2 | Rate My Professors, all ISU professors | Searchable list of every rated prof | https://www.ratemyprofessors.com/search/professors/452?q=* |
 | 3 | Coursicle for isu | Reviews tied to the exact courses each professor teaches | https://www.coursicle.com/iastate/professors/ |
 | 4 | Uloop for isu | Second review aggregator for cross-coverage of the same profs | https://iastate.uloop.com/professors |
-| 5 | ISU CS Department faculty | Official names→courses map, so i can look up the right professors | https://www.cs.iastate.edu/people/faculty |
+| 5 | ISU CS Department faculty | Official names to courses map, so i can look up the right professors | https://www.cs.iastate.edu/people/faculty |
 | 6 | reddit recommended classes | Threads debating best classes regardless of major | https://www.reddit.com/r/iastate/comments/1spwunn/whats_a_class_at_iowa_state_that_youd_recommend/ |
 | 7 | reddit best professors | favorite professors across departments | https://www.reddit.com/r/iastate/comments/1al3k6c/best_professors_at_isu/ |
 | 8 | reddit worst professors  | professors to watch out for | https://www.reddit.com/r/iastate/comments/1akvev2/worst_professors_at_isu/ |
@@ -51,6 +51,8 @@ Officially no college would tell you students like X or dislike Y about professo
 **Overlap:** 50 chars
 
 **Reasoning:** Definitely review heavy, mostly short and consistent self contained opinions and messages. I want each chunk to be about one opinion roughly. Longer chunks may accidentally merge multiple professors or classes.
+
+I ended up switching from the fixed 400 char sliding window to boundary based chunking (one chunk per comment, split on blank lines) after I looked at the output. the sliding window was cutting reviews mid sentence which goes against my one chunk is about one opinion goal. the 50 char overlap now only kicks in as a backup when a single comment is over 600 chars. final chunk count was 433.
 
 ---
 
@@ -83,7 +85,7 @@ Officially no college would tell you students like X or dislike Y about professo
 | 2 | Which Computer Engineering (CPR E) professors do students say to avoid, and why? | (from row 9 thread — the prof names + reasons given) |
 | 3 | What are some fun, easy "category"/gen-ed classes students recommend? | (from rows 10 & 11 — the specific classes mentioned) |
 | 4 | What class do students recommend taking regardless of major, and why? | (from row 6 — the class + the reason students give) |
-| 5 | What do students say about [a specific professor with several RMP reviews]'s grading? | (from rows 1–4 — summarize that prof's reviews) |
+| 5 | What do students say about [a specific professor with several RMP reviews]'s grading? | (from rows 1 to 4, summarize that prof's reviews) |
 
 ---
 
@@ -133,24 +135,11 @@ Thank you genai for the beautiful ascii that would've taken me 500000 years
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
 
-**Milestone 3 — Ingestion and chunking:**
-Tool: Claude Code. Input: my Chunking Strategy section + a sample of 2–3 collected documents so
-it sees the real review format. Ask it to implement the document loader (read every file in
-documents/) and a chunk function using my 400-char size / 50-char overlap, prepending the
-professor/course name to each chunk. Verify: run it on one RMP file and one Reddit file, print
-the resulting chunks, and confirm individual reviews stay intact and each chunk carries its
-professor/course label.
+**Milestone 3, ingestion and chunking:**
+Tool: Claude Code. I gave it my chunking strategy section plus a couple of my real documents so it could see what the reviews actually look like. I asked it to write the loader that reads every file in documents/ and a chunk function using my size and overlap, with the source name attached to each chunk. to check it I ran it on a reddit file and an RMP file, printed the chunks, and made sure the reviews stayed in one piece and kept their source label.
 
-**Milestone 4 — Embedding and retrieval:**
-Tool: Claude Code. Input: my Retrieval Approach section. Ask it to embed chunks with
-all-MiniLM-L6-v2, store them in a persistent ChromaDB collection (cosine), and implement a
-retrieve() that returns top-5 chunks with text, source, and distance. Verify: run eval question
-#1, print the 5 results with distances, and confirm the closest chunks are actually about the
-professors named in that thread (the same sanity check I used in the RulesBot lab).
+**Milestone 4, embedding and retrieval:**
+Tool: Claude Code. I gave it my retrieval approach section and asked it to embed the chunks with all-MiniLM-L6-v2, store them in a persistent ChromaDB collection using cosine, and write a retrieve() that returns the top 5 chunks with their text, source, and distance. to check it I ran my first eval question, printed the 5 results with distances, and confirmed the closest chunks were actually about the professors named in that thread.
 
-**Milestone 5 — Generation and interface:**
-Tool: Claude Code. Input: my Evaluation Plan + a grounding requirement (answer only from
-retrieved reviews; report consensus; say so when reviews don't cover it). Ask it to implement a
-grounded generate_response() and a Gradio chat UI. Verify: run all 5 eval questions and check
-each answer matches my expected answers, plus ask an off-corpus question (e.g. a professor not
-in my docs) and confirm it says it has no reviews rather than inventing one.
+**Milestone 5, generation and interface:**
+Tool: Claude Code. I gave it my evaluation plan and my grounding rules, which are answer only from the retrieved reviews, report the consensus, and say so when the reviews don't cover it. I asked it to write a grounded generate_response() and a gradio interface. to check it I ran all 5 eval questions and also asked something that isn't in my docs to make sure it gave the fallback instead of making something up.
